@@ -1,8 +1,13 @@
+import { supabase } from "@/lib/supabaseClient";
 
-export default function Home() {
+
+export default async function Home() {
+  const { data } = await supabase.from('test').select()
+  console.log(data);
+  
   return (
     <div className="">
-      hello
+      { data[0].text }
     </div>
   )
 }
