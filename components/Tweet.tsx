@@ -15,7 +15,7 @@ const Tweet = (tweet: any) => {
           />
       </div>
 
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         <div className="text-sm">
           <span className="font-semibold">Marcus Rashford</span>
           <span className="text-slate-500"> @{tweet.author} </span>
