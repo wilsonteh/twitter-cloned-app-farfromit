@@ -5,7 +5,7 @@ import { cache } from "react"
 export const getAllRecords = async (
   tableName: string, 
   sortBy: string = 'created_at', 
-  isAsce: boolean = true,
+  isAsce: boolean = false,
 ) => {
 
   const { data, error } = await supabase

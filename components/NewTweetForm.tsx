@@ -1,10 +1,11 @@
 "use client";
 import Image from "next/image";
-import Button from "./ui/Button";
+import { PrimaryButton } from "./ui/Buttons";
 import { insertRecord } from "@/lib/supabase/Utils";
 import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
-import ErrorText from "./ui/HelperText";
+import HelperText from "./ui/HelperText";
+import { useSupabase } from "@/supabase-provider";
 
 interface Tweet {
   text: string;
@@ -12,6 +13,7 @@ interface Tweet {
 }
 
 const NewTweetForm = () => {
+  const { supabase } = useSupabase();
   const router = useRouter();
   const { register, handleSubmit, formState: { errors }, resetField } = useForm<Tweet>();
 
@@ -54,13 +56,13 @@ const NewTweetForm = () => {
         
         <div className={`flex ${errors.text ? 'justify-between' : 'justify-end'} items-center`}>
           { errors.text && 
-            <ErrorText 
+            <HelperText
               type="error" 
               text={errors.text.message!} 
               classNames="self-start"
               /> }
 
-          <Button 
+          <PrimaryButton 
             text="Tweet" 
             className="px-4 py-1 self-end" 
             />

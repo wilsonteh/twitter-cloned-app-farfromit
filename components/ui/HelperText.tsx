@@ -5,7 +5,7 @@ interface Props {
   classNames?: string;
 }
 
-const ErrorText = ({ type, text, classNames }: Props) => {
+const HelperText = ({ type, text, classNames }: Props) => {
   let styles = "";
 
   if (type === "error") {
@@ -23,4 +23,4 @@ const ErrorText = ({ type, text, classNames }: Props) => {
   );
 }
  
-export default ErrorText;
+export default HelperText;
