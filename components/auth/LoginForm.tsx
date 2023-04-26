@@ -12,7 +12,7 @@ interface LoginFormData {
 
 const LoginForm = () => {
   const { supabase } = useSupabase();
-  const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>(); 
+  const { register, handleSubmit, formState: { errors }, resetField } = useForm<LoginFormData>(); 
   const router = useRouter();
 
   const email = register("email", {

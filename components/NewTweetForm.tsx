@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
 import HelperText from "./ui/HelperText";
 import { useSupabase } from "@/supabase-provider";
+import { useEffect } from "react";
 
 interface Tweet {
   text: string;
@@ -13,7 +14,8 @@ interface Tweet {
 }
 
 const NewTweetForm = () => {
-  const { supabase } = useSupabase();
+  const { supabase, session } = useSupabase();
+
   const router = useRouter();
   const { register, handleSubmit, formState: { errors }, resetField } = useForm<Tweet>();
 
@@ -24,6 +26,18 @@ const NewTweetForm = () => {
     resetField("text")
     router.refresh();
   }
+
+  // useEffect(() => {
+  //   async function getUser() {
+  //     const { data: { user } } = await supabase.auth.getUser()
+  //     console.log("🚀 ~ user:", user)
+  //     return user;
+  //   }
+  //   getUser();
+
+  // }, [])
+  
+  
 
   return (
     <form 
