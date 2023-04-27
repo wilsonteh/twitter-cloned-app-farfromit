@@ -2,6 +2,8 @@ import "server-only";
 import SupabaseProvider from '@/supabase-provider'
 import './globals.css'
 import { createServerClient } from "@/lib/supabase/supabase-server";
+import RightSideBar from "@/components/RightSideBar";
+import SideBar from "@/components/SideBar";
 
 export const metadata = {
   title: 'Twitter Cloned App',
@@ -23,9 +25,17 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className="">
+
         <SupabaseProvider session={session}> 
-          {children} 
+          <div className="flex gap-x-8 justify-center items-start">
+            <SideBar />
+            <div className="w-[500px]">
+              {children}  
+            </div>
+            <RightSideBar />
+          </div>
         </SupabaseProvider>
+        
       </body>
     </html>
   )
