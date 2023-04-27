@@ -7,7 +7,6 @@ import HashTagIcon from "./icons/HashTagIcon";
 import BellIcon from "./icons/BellIcon";
 import BookmarkIcon from "./icons/BookmarkIcon";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 
 const SideBar = () => {
 
