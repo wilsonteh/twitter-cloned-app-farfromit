@@ -12,7 +12,7 @@ const BookmarkIcon = ({ color, fill, className, stroke }: Props) => {
         color={color || ""}
         fill={fill || "none"}
         viewBox="0 0 24 24"
-        stroke-width={stroke || "1.5"}
+        strokeWidth={stroke || "1.5"}
         stroke="currentColor"
         className={className || "w-4 h-4"}
       >
